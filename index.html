@@ -1,0 +1,233 @@
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(yo.gif);
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 80vw;
+            min-height: 80vh;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px rgba(8, 179, 85, 0.3);
+            padding: 40px 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            font-family: 'Sen', sans-serif;
+            text-shadow: 3px 25px 11px rgba(0,0,0,0.75);
+            margin-bottom: 40px;
+            /* border-bottom: 1px dotted rgb(3, 104, 40); */
+            font-size: 30px;
+            color: #4dbf00;
+        }
+
+        .container .login-text {
+            color: black;
+            font-weight: 800;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+            text-transform: capitalize;
+        }
+
+        .container .login-email .input-group {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 25px;
+        }
+
+        .container .login-email .input-group textarea {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #e7e7e7;
+            padding: 15px 20px;
+            font-size: 1.3rem;
+            border-radius: 30px;
+            background: transparent;
+            outline: none;
+            transition: 0.3s;
+            resize: none;
+        }
+
+        .container .login-email .input-group input:focus,
+        .container .login-email .input-group input:valid {
+            border-color: #a29bfe;
+        }
+
+        .container .login-email .input-group .btn {
+            display: block;
+            width: 20%;
+            margin-left: 40%;
+            padding: 15px 20px;
+            text-align: center;
+            border: none;
+            background: #a29bfe;
+            outline: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .container .login-email .input-group .btn:hover {
+            transform: translateY(-5px);
+            background-color: #6c5ce7;
+        }
+
+        .login-register-text {
+            color: #111111;
+            font-weight: 600;
+        }
+
+        .login-register-text a {
+            text-decoration: none;
+            color: #6c5ce7;
+        }
+
+
+        @media (max-width: 430px) {
+            .container {
+                width: 300px;
+            }
+        }
+
+        .sum-out {
+            margin-top: -120px;
+            margin-bottom: 20px;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .output {
+            border: 1px solid blueviolet;
+            border-radius: 20px;
+            padding: 20px 30px;
+            font-size: 20px;
+        }
+
+        .output p {
+            word-wrap: break-word;
+        }
+
+    </style>
+
+
+    <title>ChatGPT classifier</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <a href="summarization.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">ChatGPT classifier</h1>
+            </a>
+        </div>
+        <!-- <form  class="login-email"> -->
+            <div class="input-group">
+                <textarea id="inputText" class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Enter your text"></textarea>
+                <!-- <textarea id="inputText" rows="4" cols="50" placeholder="Enter your bangla text" name="inputText" required ></textarea> -->
+            </div>
+            <br>
+            <div class="input-group">
+                <button type="button" class="btn btn-primary" onclick="displayDate()">Output</button>
+                <!-- <button onclick="displayDate()" class="btn">The time is?</button> -->
+                <!-- <button type="submit" class="btn">Submit</button> -->
+            <!-- <button name="submit" class="btn"  onclick="sendButton()">Summarize</button> -->
+            </div>
+        <!-- </form> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div> <h2 class="sum-out">Is it AI generated text?:</h2></div>
+       
+        <div class="output" >
+            <p id="output"></p>
+        </div>
+        <div class="output" >
+            <p id="output2"></p>
+        </div>
+    </div>
+
+    <script>
+        function displayDate() {
+            var input = document.getElementById("inputText").value;
+          
+          query({text: input}).then((response) => {
+            
+            var val=JSON.stringify(response);
+            var val2= JSON.parse(val);
+            if (val2[0].score>val2[1].score){
+                document.getElementById("output").innerHTML = "NO";
+            }
+            else{
+                document.getElementById("output").innerHTML = "YES";  
+            }
+
+            // document.getElementById("output").innerHTML = val2[0].label;
+            
+            console.log(val);
+            var txt="Human generated: "+val2[0].score+"<br>"+"AI generated: "+val2[1].score;
+            document.getElementById("output2").innerHTML = txt; 
+            });
+            
+        }
+        async function query(data) {
+            const response = await fetch(
+            "https://api-inference.huggingface.co/models/shahidul034/chatGPT_classifier",
+            {
+                headers: { Authorization: "Bearer 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" },
+                method: "POST",
+                body: JSON.stringify(data),
+                }
+            );
+                const result = await response.json();
+                return result;
+            }
+
+       
+
+        </script> 
+</body>
+
+</html>
